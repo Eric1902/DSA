@@ -26,11 +26,7 @@ public class IsSubTreesSumEqualsNodeData {
         boolean isLeft = isSumTree(node.left);
         boolean isRight = isSumTree(node.right);
 
-        if (node.data == sumSubTree && isLeft && isRight) {
-            return true;
-        }
-
-        return false;
+        return node.data == sumSubTree && isLeft && isRight;
     }
 
     private static int getSumSubTree(Node node) {
