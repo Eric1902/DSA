@@ -1,4 +1,4 @@
-package com.emf.practice;
+package com.problems;
 
 import java.util.HashMap;
 import java.util.Map;

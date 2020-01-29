@@ -1,4 +1,4 @@
-package com.emf.practice;
+package com.problems;
 
 class Node {
     int data;

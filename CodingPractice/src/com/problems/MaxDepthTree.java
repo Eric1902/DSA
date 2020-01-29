@@ -1,4 +1,4 @@
-package com.emf.practice;
+package com.problems;
 
 public class MaxDepthTree {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.emf.practice;
+package com.problems;
 
 public class CountUniversalTrees {
     private static int result = 0;
