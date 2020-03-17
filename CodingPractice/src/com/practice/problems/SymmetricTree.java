@@ -1,4 +1,4 @@
-package com.problems;
+package com.practice.problems;
 
 public class SymmetricTree {
     public static void main(String[] args) {

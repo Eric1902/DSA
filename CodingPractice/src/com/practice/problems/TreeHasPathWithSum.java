@@ -1,6 +1,6 @@
-package com.problems;
+package com.practice.problems;
 
-public class PrintTreePaths {
+public class TreeHasPathWithSum {
 
     public static void main(String[] args) {
         Node root = new Node(12);
@@ -11,21 +11,16 @@ public class PrintTreePaths {
         root.right.left = new Node(4);
         root.right.right = new Node(5);
 
-        printPaths(root);
+        System.out.println(hasPathWithSum(root, 26));
     }
 
-    static void printPaths(Node node) {
-        printPaths(node, new String());
-    }
-
-    private static void printPaths(Node node, String path) {
+    private static boolean hasPathWithSum(Node node, int sum) {
         if (node == null)
-            return;
+            return false;
         if (node.left == null && node.right == null) {
-            System.out.println(path + node.data);
+            return node.data == sum;
         }
-        printPaths(node.left, (path + node.data + "_"));
-        printPaths(node.right, (path + node.data + "_"));
 
+        return hasPathWithSum(node.left, sum - node.data) || hasPathWithSum(node.right, sum - node.data);
     }
 }

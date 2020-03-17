@@ -1,4 +1,4 @@
-package com.problems;
+package com.practice.problems;
 
 public class CountUniversalTrees {
     private static int result = 0;

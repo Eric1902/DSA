@@ -1,4 +1,4 @@
-package com.problems;
+package com.practice.problems;
 
 class Node {
     int data;
