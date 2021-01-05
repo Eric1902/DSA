@@ -15,6 +15,7 @@ public class SongPair {
         System.out.println(getPairCount(new int[]{30, 30, 30, 30}));
         System.out.println(getPairCount(new int[]{30, 20, 150, 100, 40}));
         System.out.println(getPairCount(new int[]{60, 60, 60}));
+        System.out.println(getPairCount(new int[]{174, 188, 377, 437, 54, 498, 455, 239, 183, 347, 59, 199, 52, 488, 147, 82}));
     }
 
     private static int getPairCount(int[] songs) {
@@ -23,16 +24,20 @@ public class SongPair {
         Map<Integer, Integer> memory = new HashMap<>();
 
         for (int song : songs) {
-            song = song % 60;
 
-            int myPair = (60 - song) % 60;
+            int normalizedSong = song % 60;
+            int myPair = (60 - normalizedSong) % 60;
+
             if (memory.containsKey(myPair)) {
                 int currentValue = memory.get(myPair);
                 result += currentValue;
-                memory.put(song, currentValue + 1);
-            } else {
-                memory.put(song, 1);
             }
+
+            if(memory.containsKey(normalizedSong))
+                memory.put(normalizedSong, memory.get(normalizedSong)+1);
+            else
+                memory.put(normalizedSong, 1);
+
         }
 
         return result;
